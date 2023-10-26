@@ -97,19 +97,19 @@ if mouse == 0:
 
 ### GENIE BAŞLATMA ###
 time.sleep(1)
-ss = take_screenshot()
-genie_start_btn_x, genie_start_btn_y = pyautogui.locateCenterOnScreen("images/genie_start_btn.png")
-print(genie_start_btn_x, genie_start_btn_y)
+# ss = take_screenshot()
+# genie_start_btn_x, genie_start_btn_y = pyautogui.locateCenterOnScreen("images/genie_start_btn.png")
+# print(genie_start_btn_x, genie_start_btn_y)
 
 mstroke = mouse_stroke(
     interception_mouse_state.INTERCEPTION_MOUSE_LEFT_BUTTON_DOWN.value,
     interception_mouse_flag.INTERCEPTION_MOUSE_MOVE_ABSOLUTE.value,
     0,
-    int((0xFFFF * genie_start_btn_x) / screen_width),
-    int((0xFFFF * genie_start_btn_y) / screen_height),
+    int((0xFFFF * 1000) / screen_width),
+    int((0xFFFF * 400) / screen_height),
     0,
 )
 context.send(mouse, mstroke)
-time.sleep(0.5)
+time.sleep(3)
 mstroke.state = interception_mouse_state.INTERCEPTION_MOUSE_LEFT_BUTTON_UP.value
 context.send(mouse, mstroke)
